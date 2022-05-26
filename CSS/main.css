@@ -676,6 +676,11 @@ img{
     color: #443fe4;
     transition: .3s;
 }
+.footer-contact-3 ul li i:hover{
+    background-color: #774bfa;
+    color: #fff;
+    border: 1px solid #774bfa;
+}
 .footer-contact-3 p {
     margin: 30px 0px;
     color: #777777;
