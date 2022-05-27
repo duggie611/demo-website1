@@ -1,4 +1,4 @@
-*{
+*, ::after, ::before{
     box-sizing: border-box;
 }
 h1, h2, h3, h4, h5, h6{
@@ -26,10 +26,13 @@ ul, ol, li {
     color: #64648d;
 }
 .header {
-    position: sticky;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
     top: 0;
     background-color: #fff;
-    z-index: 1;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 .container{
     width: 100%;
@@ -38,6 +41,7 @@ ul, ol, li {
     margin-right: auto;
     margin-left: auto;
 }
+
 .row{
     display: flex;
     flex-wrap: wrap;
@@ -51,7 +55,14 @@ ul, ol, li {
 }
 .logo{
     padding: 46px 0px;
-    margin: 0px 0px 0px 175px;
+    max-width: 120px;
+    /* width: 16.66%; */
+    /* float: left; */
+    /* position: absolute; */
+    /* transform:translate(125%,5%); */
+    /* left: 38%; */
+    /* margin: 0px 0px 0px 175px; */
+    margin-left: 20%;
     position: relative;
     padding-right: 15px;
     padding-left: 15px;
@@ -65,11 +76,15 @@ img{
     max-width: 100%;
     height: auto;
 }
-
 .main-menu{
     display: inline-block;
     margin-right: 28px;
     padding: 50px 0px;
+    /* width: 100%; */
+    position: absolute;
+    top: 50%;
+    left:40%;
+    transform: translate(-50%, -50%);
 }
 .main-menu a{
     color: #777777;
@@ -88,6 +103,11 @@ img{
     text-align: right;
     margin-top: 39px;
     font-weight: 600;
+    /* width: 16.66%; */
+    position: absolute;
+    top: 18%;
+    left: 71.5%;
+    transform: translate(-50%, -50%);
 }
 .menu-btn a{
     text-decoration: none;
@@ -115,18 +135,36 @@ img{
 /*CSS for head slide-area*/
 .slide-area{
     position: relative;
-    background-color: #7a5cf6;
-    width: 1519px;
-    height: 840px;
+    /* background-color: #7a5cf6; */
+    /* width: 1519px;
+    height: 840px;  */
 }
 .banner-right{
     position: absolute;
-    right: 10%;
-    top: 15%;
+    bottom: 0px;
+    right: 11%;
+    /* top: 6%; */
 }
+.banner-image{
+    height: 840px;
+    background-color: #7a5cf6;
+    /* background-size: 100% 100%; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+}
+.display-table {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+/*.display-table-cell{
+    display: table-cell;
+    vertical-align: middle;
+} */
 .slide-btn{
     text-align: left;
-    margin-left: 200px;
+    /* margin-left: 200px; */
     font-weight: 600;
 }
 .slide-btn a{
@@ -148,20 +186,36 @@ img{
     background: #443fe4;
     border: 1px solid #443fe4;
 }
+.slider-content{
+    position: absolute;
+    top: 60%;
+    left: 37.5%;
+    transform: translate(-50%, -50%);
+}
 .slider-content h2{
+    /* width: 100%;
+    display: inline-block;
+    vertical-align: middle; */
     font-size: 50px;
     color:#fff;
     font-weight: 600;
     line-height: 70px;
     margin-bottom: 20px;
-    margin-top: 280px;
-    margin-left: 200px;
+    /* margin-left: 10%; */
+    /* margin-top: auto;
+    margin-left: auto; */
+    width: 100%;
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+    
 }
 .slider-content p{
     color: #fff;
     max-width: 450px;
     margin-bottom: 30px;
-    margin-left: 200px;
+    /* margin-left: 25%; */
     margin-top: 40px;
     line-height: 24px;
     font-size: 14px;
@@ -170,13 +224,27 @@ img{
 }
 
 /*CSS for services area*/
+.services-area{
+    padding-top: 100px;
+}
+/* .row .services-column{
+    max-width: 22.5%;
+    margin-left: auto;
+} */
 .services-column{
     float: left;
-    width: 20%;
-    padding-top: 100px;
-    margin-right: 100px;
-    text-align: center;
+    max-width: 330px;
+    /* margin-right: 4%; */
     margin-bottom: 100px;
+    padding: 0px 10px;
+    text-align: center;
+    margin-right: 60px;
+}
+.services-column:first-of-type{
+    margin-left: auto;
+}
+.services-column:last-of-type{
+    margin-right: auto;
 }
 .services-column .services-icon img{
     width: 50px;
@@ -205,8 +273,13 @@ img{
     color: #443fe4;
     box-shadow: 0px 2px 10px 6px #ececec;
 }
-.services-column:first-child{
-    margin-left: 210px;
+.services-column:last-child{
+    margin-right: auto;
+}
+.services-column::after{
+    content: "";
+    clear: both;
+    display: table;
 }
 .services-column h3{
     margin-bottom: 17px;
@@ -232,7 +305,10 @@ img{
 .section-title{
     text-align: center;
     margin-bottom: 60px;
-    padding-left: 452px;
+    max-width: 100%;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 .section-title p{
     font-size: 24px;
@@ -253,12 +329,15 @@ img{
     background-color: #fff;
     padding: 40px 15px;
     float: left;
-    width: 22.5%;
-    margin-right: 20px;
-    margin-left: 30px;
+    max-width: 350px;
+    margin-right: 50px;
+    /* margin-left: auto; */
 }
 .features-column:first-of-type{
-    margin-left: 200px;
+    margin-left: auto;
+}
+.features-column:last-of-type{
+    margin-right: auto;
 }
 .features-column:hover{
     box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.1);
@@ -318,12 +397,15 @@ img{
 }
 .padding-column{
     text-align: center;
-    width: 20%;
+    max-width: 140px;
     float: left;
-    margin-right: 0px;
+    margin-right: 100px;
 }
 .padding-column:first-of-type{
-    margin-left: 163px;
+    margin-left: auto;
+}
+.padding-column:last-of-type{
+    margin-right: auto;
 }
 .padding-column h2{
     font-size: 45px;
@@ -345,19 +427,22 @@ img{
     background-color: #fff8f5;
 }
 .pricing-area .section-title{
-    margin-left: 80px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .pricing-column{
     text-align: center;
     background-color: #fff;
     padding: 30px 15px;
     float: left;
-    width: 23%;
-    margin-right: 20px;
-    margin-left: 15px;
+    max-width: 350px;
+    margin-right: 50px;
 }
 .pricing-column:first-of-type{
-    margin-left: 210px;
+    margin-left: auto;
+}
+.pricing-column:last-of-type{
+    margin-right: auto;
 }
 .pricing-item{
     /* text-align: center; */
@@ -451,7 +536,13 @@ img{
     text-align: center;
 }
 .get-app .section-title{
-    margin-left: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.get-app .row .get-app-content{
+    margin-top: -20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .get-app-content p{
     margin-bottom: 19px;
@@ -462,13 +553,13 @@ img{
     font-weight: 400;
     color: #64648d;
     text-align: center;
-    margin-left: 510px;
-    margin-top: -30px;
+    max-width: 540px;
 }
 .review{
     text-align: center;
-    margin-top: 40px;
-    margin-left: -410px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 .review span{
     display: inline-block;
@@ -489,13 +580,12 @@ img{
 }
 .review-image{
     text-align: center;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 .review-image ul li {
     display: inline-block;
     margin-right: 20px;
-    margin-left: -360px;
-    margin-top: 63px;
+    margin-top: 30px;
 }
 
 /*CSS for blog-area*/
@@ -504,19 +594,23 @@ img{
     text-align: center;
 }
 .blog-area .section-title{
-    margin-left: 130px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .blog-column{
     text-align: left;
     background-color: #fff;
     padding: 30px 15px;
     float: left;
-    width: 25%;
+    max-width: 350px;
     margin-right: -5px; 
     margin-top: -40px;
 }
 .blog-column:first-of-type{
-    margin-left: 190px;
+    margin-left: auto;
+}
+.blog-column:last-of-type{
+    margin-right: auto;
 }
 .blog-item:hover .blog-content {
     box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.1);
@@ -607,12 +701,15 @@ img{
     text-align: left;
     padding: 30px 15px;
     float: left;
-    width: 30%;
-    margin-right: -5px; 
+    max-width: 350px;
+    /* margin-right: auto; */
     margin-top: -40px;
 }
 .footer-column1:first-of-type{
-    margin-left: 165px;
+    margin-left: auto;
+}
+.footer-column1:last-of-type{
+    margin-right: auto;
 }
 .footer-title h3{
     font-size: 20px;
@@ -643,8 +740,8 @@ img{
     text-align: left;
     padding: 30px 15px;
     float: left;
-    width: 15%;
-    margin-right: -5px; 
+    max-width: 150px;
+    margin-right: 100px; 
     margin-top: -40px;
 }
 .footer-contact-2 ul li {
