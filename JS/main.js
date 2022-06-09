@@ -56,12 +56,12 @@ var draggable = function(){
     x = e.offsetX;
 
     innerslider.style.left = `${x - startX}px`;
-    if(x - startX >= 0 && (x - startX) % 10 == 0){
+    if(x - startX >= 0 && (x - startX) % 15 == 0){
         slideIndex++;
         showSlides((slideIndex % 5 + 5) % 5 );
         console.log(innerslider.style.left);
     }   
-    else if(x - startX < 0 && ((x - startX) % 10 + 10) % 10 == 0){
+    else if(x - startX < 0 && ((x - startX) % 15 + 15) % 15 == 0){
         slideIndex--;
         showSlides((slideIndex % 5 + 5) % 5 );
         console.log(innerslider.style.left);
