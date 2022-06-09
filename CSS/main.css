@@ -418,6 +418,86 @@ img{
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+/*CSS for screenshot-area*/
+.screenshot-area{
+    padding: 100px 0px;
+    background-color: #f6f7ff;
+}
+
+.screenshot-column{
+    text-align: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.stage-outer{
+    position: relative;
+    overflow: hidden;
+}
+.screenshot-all{
+    margin: 0 auto;
+}
+.stage .item-cloned , .stage .item-cloned1{
+    float: left;
+    max-width: 216px;
+}
+/* .screenshot-all .item-cloned .nav .prev{
+    margin-left: 50%;
+    margin-top: 170px;
+    opacity: 0;
+    transition: 0.4s;
+}
+.screenshot-all .item-cloned .nav .next{
+    margin-left: 5%;
+    margin-top: 170px;
+    opacity: 0;
+    transition: 0.4s;
+}
+.screenshot-all:hover .item-cloned .nav .prev, .screenshot-all:hover .item-cloned .nav .next{
+    opacity: 1;
+}
+.screenshot-all .item-cloned .nav div i{
+    font-size: 28px;
+    background: #f77035;
+    width: 50px;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    border-radius: 50%;
+} */
+
+
+.screenshot-all .nav .prev{
+    margin-left: -7%;
+    margin-top: -175px;
+    float: left;
+    opacity: 0;
+    transition: 0.4s;
+}
+.screenshot-all .nav .next{
+    margin-right: -7%;
+    margin-top: -175px;
+    opacity: 0;
+    transition: 0.4s;
+    float: right;
+}
+.screenshot-all:hover .nav .prev, .screenshot-all:hover .nav .next{
+    opacity: 1;
+}
+.controls .nav div i{
+    font-size: 28px;
+    background: #f77035;
+    width: 50px;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
 /*CSS for pricing area*/
 .pricing-area{
     padding: 100px 0px;
